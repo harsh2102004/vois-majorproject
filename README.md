@@ -16,22 +16,25 @@ Agricultural activities are influenced by seasonal variations in environmental c
 
 ```
 vois-majorproject/
-├── Seasonal_Agriculture_Analysis.ipynb   # Main executed Jupyter Notebook (with all outputs)
+├── Seasonal_Agriculture_Analysis.ipynb   # Main notebook with the full analysis workflow
+├── make_notebook.py                      # Generates the notebook from the analysis cells
+├── run_analysis.py                       # Produces the plotted figures for the project
 ├── agriculture_dataset.csv               # Dataset (4000 rows × 28 columns)
-├── README.md                             # This file
+├── README.md                             # Project documentation
 ├── seasonal_performance.png              # Yield, Profit, Revenue vs Cost by Season
-├── crop_season_heatmap.png               # Crop yield & profit heatmaps
-├── profit_boxplot.png                    # Profit distribution by season & crop
-├── correlation_matrix.png               # Environmental factors correlation
-├── env_vs_yield.png                      # Rainfall, Temp, Soil, Sunlight vs Yield
-├── resource_usage.png                    # Water, Fertilizer, NPK, Pesticide by season
+├── crop_season_heatmap.png               # Crop yield and profit heatmaps
+├── profit_boxplot.png                    # Profit distribution by season and crop
+├── correlation_matrix.png                # Environmental factor correlation analysis
+├── env_vs_yield.png                      # Rainfall, temperature, soil, and sunlight vs yield
+├── resource_usage.png                    # Water, fertilizer, pesticide, and nutrient usage
 ├── water_efficiency.png                  # Irrigation method efficiency comparison
-├── state_performance.png                 # Top 10 states by yield & profit
-├── npk_yield.png                         # Nitrogen, Phosphorus, Potassium vs Yield
-├── profitability.png                     # Yield vs Profit, Seed Quality vs Yield
-└── disease_risk.png                      # Disease & pest risk distribution by season
+├── state_performance.png                 # Top states by yield and profit
+├── npk_yield.png                         # Nitrogen, phosphorus, and potassium vs yield
+├── profitability.png                     # Yield vs profit and seed quality vs yield
+└── disease_risk.png                      # Disease and pest risk distribution by season
 ```
 
+> This repository contains one actual notebook: `Seasonal_Agriculture_Analysis.ipynb`. The script `make_notebook.py` regenerates it if needed; it does not create a separate notebook file.
 ---
 
 ## 📊 Dataset Description
@@ -136,9 +139,11 @@ pip install pandas numpy matplotlib seaborn scipy jupyter
 ```bash
 git clone https://github.com/harsh2102004/vois-majorproject.git
 cd vois-majorproject
+python run_analysis.py
+python make_notebook.py   # optional: regenerate the notebook from the script
 jupyter notebook Seasonal_Agriculture_Analysis.ipynb
 ```
-> The notebook will load `agriculture_dataset.csv` automatically from the same folder.
+> The notebook loads `agriculture_dataset.csv` from the same folder. The project is organized around one main notebook and generated analysis figures, without any presentation export.
 
 ---
 
